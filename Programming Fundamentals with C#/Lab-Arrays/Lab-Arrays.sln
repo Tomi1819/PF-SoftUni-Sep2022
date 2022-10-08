@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06. Even and Odd Subtractio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07. Equal Arrays", "07. Equal Arrays\07. Equal Arrays.csproj", "{571B2600-7C48-4CAD-9AEB-D4E5EFDF5F2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. Condense Array to Number", "08. Condense Array to Number\08. Condense Array to Number.csproj", "{E5847F78-E3AD-440C-80A9-96D168022583}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08. Condense Array to Number", "08. Condense Array to Number\08. Condense Array to Number.csproj", "{E5847F78-E3AD-440C-80A9-96D168022583}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{C7903AB3-E85E-4470-80BA-4C21EC6E100A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{E5847F78-E3AD-440C-80A9-96D168022583}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5847F78-E3AD-440C-80A9-96D168022583}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5847F78-E3AD-440C-80A9-96D168022583}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7903AB3-E85E-4470-80BA-4C21EC6E100A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7903AB3-E85E-4470-80BA-4C21EC6E100A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7903AB3-E85E-4470-80BA-4C21EC6E100A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7903AB3-E85E-4470-80BA-4C21EC6E100A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
