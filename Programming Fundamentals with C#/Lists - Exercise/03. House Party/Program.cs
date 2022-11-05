@@ -10,11 +10,11 @@ namespace _03._House_Party
             List<string> guestList = new List<string>();
             int num = int.Parse(Console.ReadLine());
 
-            string[] commArgs = Console.ReadLine().Split();
-            string name = commArgs[0];
-
             for (int i = 0; i < num; i++)
             {
+                string[] commArgs = Console.ReadLine().Split();
+                string name = commArgs[0];
+
                 if (commArgs.Length == 3)
                 {
                     if (guestList.Contains(name))
