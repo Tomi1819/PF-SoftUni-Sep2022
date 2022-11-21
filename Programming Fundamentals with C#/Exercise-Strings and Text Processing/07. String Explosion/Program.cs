@@ -6,7 +6,7 @@ namespace _07._String_Explosion
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
