@@ -9,41 +9,16 @@ namespace _06._Replace_Repeating_Chars
     {
         static void Main(string[] args)
         {
-            //List<string> input = Console.ReadLine().Split().ToList();
-            //List<string> output = new List<string>();
-            //foreach (var ch in input)
-            //{
-            //    if (!output.Contains(ch))
-            //    {
-            //        output.Add(ch);
-            //    }
-            //}
-            //Console.WriteLine(string.Join("",output));
-
-
-            //string input = Console.ReadLine();
-            //string output = string.Empty;
-            //foreach (var ch in input)
-            //{
-            //    if (!output.Contains(ch))
-            //    {
-            //        output += ch;
-            //    }
-            //}
-            //Console.WriteLine(output);
-
-
-
-
-            string text = Console.ReadLine();
-            char previousChar = text[0];
-            Console.Write(previousChar);
-            for (int i = 1; i < text.Length; i++)
+            string input = Console.ReadLine();
+            char previousChar = input[0];
+            char firstChar = previousChar;
+            Console.Write(firstChar);
+            for (int i = 1; i < input.Length; i++)
             {
-                char currentChar = text[i];
-                if (previousChar != currentChar)
+                char currChar = input[i];
+                if (previousChar != currChar)
                 {
-                    previousChar = currentChar;
+                    previousChar = currChar;
                     Console.Write(previousChar);
                 }
             }
