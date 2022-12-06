@@ -108,8 +108,8 @@ namespace _07._Vending_Machine
                 {
                     Console.WriteLine("Invalid product");
                 }
-                Console.WriteLine($"Change: {coinSum:f2}");
             }
+            Console.WriteLine($"Change: {coinSum:f2}");
         }
     }
 }

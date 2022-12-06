@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _01._Guinea_Pig
+namespace _09._Guinea_Pig
 {
     class Program
     {
@@ -14,30 +14,21 @@ namespace _01._Guinea_Pig
             for (int i = 1; i <= 30; i++)
             {
                 food -= 0.3m;
-                if (i%2==0)
+                if (i % 2 == 0)
                 {
-                    hay -= food*0.05m;
+                    hay -= food * 0.05m;
                 }
-                if (i%3==0)
+                if (i % 3 == 0)
                 {
-                    cover -= weight/3;
+                    cover -= weight / 3;
                 }
                 if (food <= 0 || cover <= 0 || hay <= 0)
                 {
-                    break;
+                    Console.WriteLine($"Merry must go to the pet store!");
+                    return;
                 }
             }
-            if (food <= 0 || hay <= 0 || cover <= 0)
-            {
-                Console.WriteLine($"Merry must go to the pet store!");
-            }
-            else
-            {
-                Console.WriteLine($"Everything is fine!" +
-                    $" Puppy is happy!" +
-                    $" Food: {food:f2}," +
-                    $" Hay: {hay:f2}, Cover: {cover:f2}.");
-            }
+            Console.WriteLine($"Everything is fine! Puppy is happy! Food: {food:f2}, Hay: {hay:f2}, Cover: {cover:f2}.");
         }
     }
 }

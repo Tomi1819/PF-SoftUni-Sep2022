@@ -9,20 +9,20 @@ namespace _02._Odd_Occurrences
         static void Main(string[] args)
         {
             string[] words = Console.ReadLine()
+                .ToLower()
                 .Split();
 
             Dictionary<string, int> counts = new Dictionary<string, int>();
 
             foreach (var word in words)
             {
-                string lowerWord = word.ToLower();
-                if (counts.ContainsKey(lowerWord))
+                if (counts.ContainsKey(word))
                 {
-                    counts[lowerWord]++;
+                    counts[word]++;
                 }
                 else
                 {
-                    counts.Add(lowerWord, 1);
+                    counts.Add(word, 1);
                 }
             }
             foreach (var item in counts)

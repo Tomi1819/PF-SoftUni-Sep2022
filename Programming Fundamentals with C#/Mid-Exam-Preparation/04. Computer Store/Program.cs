@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _01._Computer_Store
+namespace _04._Computer_Store
 {
     class Program
     {
@@ -20,25 +20,24 @@ namespace _01._Computer_Store
                 {
                     Console.WriteLine("Invalid price!");
                     type = Console.ReadLine();
-
                 }
                 else
                 {
-                    priceWithoutTax = priceWithoutTax + price;
-                    tax = 0.2 * price;
-                    sumTax = sumTax + tax;
-                    totalPrice = totalPrice + (price * 1.2);
-
+                    priceWithoutTax += price;
+                    tax = price * 0.2;
+                    sumTax += tax;
+                    totalPrice += (price * 1.2);
                     type = Console.ReadLine();
                 }
             }
             if (totalPrice == 0)
             {
                 Console.WriteLine("Invalid order!");
+                return;
 
             }
 
-            else if (type == "special")
+            if (type == "special")
             {
                 totalPrice = totalPrice * (0.9);
                 Console.WriteLine("Congratulations you've just bought a new computer!");
@@ -47,8 +46,7 @@ namespace _01._Computer_Store
                 Console.WriteLine("-----------");
                 Console.WriteLine($"Total price: {totalPrice:F2}$");
             }
-
-            else if (type == "regular")
+            else
             {
                 Console.WriteLine("Congratulations you've just bought a new computer!");
                 Console.WriteLine($"Price without taxes: {priceWithoutTax:F2}$");

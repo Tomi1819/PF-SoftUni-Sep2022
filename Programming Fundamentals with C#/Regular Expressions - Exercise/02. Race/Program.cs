@@ -9,75 +9,63 @@ namespace _02._Race
     {
         static void Main(string[] args)
         {
-            var patternName = new Regex(@"(?<name>[A-Za-z]+)");
-            string patternDigits = @"(?<digits>\d+)";
+            string patterNames = @"[A-Za-z]";
+            string patternNumbers = @"[\d]";
 
-            int sumOfDigits = 0;
-
-            Dictionary<string, int> participants = new Dictionary<string, int>();
-
-            List<string> names = Console.ReadLine()
+            Dictionary<string, int> players = new Dictionary<string, int>();
+            List<string> participants = Console.ReadLine()
                 .Split(", ")
                 .ToList();
 
-            string input;
-
+            string input = string.Empty;
             while ((input = Console.ReadLine()) != "end of race")
             {
-                var matchedNames = patternName.Matches(input);
-                var matchedDigits = Regex.Matches(input, patternDigits);
+                Regex regexName = new Regex(patterNames);
+                Regex regexNumber = new Regex(patternNumbers);
 
-                string currentName = string.Join("", matchedNames);
-                string currentDigit = string.Join("", matchedDigits);
+                MatchCollection matchedNames = regexName.Matches(input);
+                MatchCollection matchedNumbers = regexNumber.Matches(input);
 
-                sumOfDigits = 0;
+                int km = 0;
+                string currName = string.Empty;
 
-                for (int i = 0; i < currentDigit.Length; i++)
+                foreach (Match letter in matchedNames)
                 {
-                    sumOfDigits += int.Parse(currentDigit[i].ToString());
+                    currName += letter.Value;
                 }
-
-                if (names.Contains(currentName))
+                foreach (Match digit in matchedNumbers)
                 {
-                    if (!participants.ContainsKey(currentName))
-                    {                
-                        participants.Add(currentName, sumOfDigits);
+                    km += int.Parse(digit.Value);
+                }
+                if (participants.Contains(currName))
+                {
+                    if (!players.ContainsKey(currName))
+                    {
+                        players[currName] = 0;
                     }
-                    participants[currentName] += sumOfDigits;
+                    players[currName] += km;
                 }
             }
-
-            var currentWinners = participants
-               .OrderByDescending(x => x.Value)
-               .Take(3);
-
-            var firstPlace = currentWinners
-                .Take(1);
-
-            var secondPlace = currentWinners
+            Dictionary<string, int> topThree = players
                 .OrderByDescending(x => x.Value)
-                .Take(2)
-                .OrderBy(x => x.Value)
-                .Take(1);
-
-            var thirdPlace = currentWinners 
-                .OrderBy(x => x.Value)
-                .Take(1);
-
-            foreach (var firstName in firstPlace)
+                .Take(3)
+                .ToDictionary(x => x.Key, v => v.Value);
+            int count = 0;
+            foreach (var item in topThree)
             {
-                Console.WriteLine($"1st place: {firstName.Key}");
-
-            }
-
-            foreach (var secondName in secondPlace)
-            {
-                Console.WriteLine($"2nd place: {secondName.Key}");
-            }
-
-            foreach (var thirdName in thirdPlace)
-            {
-                Console.WriteLine($"3rd place: {thirdName.Key}");
+                count++;
+                if (count == 1)
+                {
+                    Console.WriteLine($"{count}st place: {item.Key}");
+                }
+                else if (count == 2)
+                {
+                    Console.WriteLine($"{count}nd place: {item.Key}");
+                }
+                else if (count == 3)
+                {
+                    Console.WriteLine($"{count}rd place: {item.Key}");
+                }
             }
         }
     }

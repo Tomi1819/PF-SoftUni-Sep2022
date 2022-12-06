@@ -6,15 +6,15 @@ namespace _03._Substring
     {
         static void Main(string[] args)
         {
-            string word = Console.ReadLine();
-            string text = Console.ReadLine();
+            string stringOne = Console.ReadLine();
+            string stringTwo = Console.ReadLine();
 
-            while (text.Contains(word))
+            while (stringTwo.Contains(stringOne))
             {
-                int startIndex = text.IndexOf(word);
-                text = text.Remove(startIndex, word.Length);
+                int startIndex = stringTwo.IndexOf(stringOne);
+                stringTwo = stringTwo.Remove(startIndex, stringOne.Length);
             }
-            Console.WriteLine(text);
+            Console.WriteLine(stringTwo);
         }
     }
 }

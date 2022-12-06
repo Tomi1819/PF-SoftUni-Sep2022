@@ -64,11 +64,11 @@ namespace _03._Vacation
             }
             if (type == "Business" && count >= 100)
             {
-                total = total - 10;
+                total = (total * count) - 10;
             }
             if (type == "Regular" && (count>=10 && count<=20))
             {
-                total *= 95;
+                total *= 95m;
             }
             Console.WriteLine($"Total price: {total:f2}");
         }
